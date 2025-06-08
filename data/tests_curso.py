@@ -30,3 +30,23 @@ def test_calcular_rentabilidad(fun):
     ])
     assert np.allclose(resultado, esperado), "Error en cálculo de rentabilidad"
     print("✅ Test de rentabilidad pasado correctamente.")
+
+def test_calcular_ratios(fun):
+    import pandas as pd
+    import numpy as np
+    df = pd.DataFrame({
+        'activo_corriente': [5000, 3000],
+        'pasivo_corriente': [2500, 1500],
+        'activo_total': [12000, 8000],
+        'pasivo_total': [6000, 4000],
+        'beneficio_neto': [1000, 500],
+        'ingresos': [10000, 5000]
+    })
+    esperado = pd.DataFrame({
+        'liquidez': [2.0, 2.0],
+        'solvencia': [2.0, 2.0],
+        'rentabilidad': [0.1, 0.1]
+    })
+    resultado = fun(df)
+    assert np.allclose(resultado, esperado), "Error en el cálculo de ratios"
+    print("✅ Test de ratios financieros pasado correctamente.")
