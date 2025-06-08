@@ -28,5 +28,5 @@ def test_calcular_rentabilidad(fun):
         [ 480., 1280., 1260.],
         [ 360., 1120., 1120.]
     ])
-    assert np.allclose(resultado, esperado), \"Error en cálculo de rentabilidad\"
-    print(\"✅ Test de rentabilidad pasado correctamente.\")
+    assert np.allclose(resultado, esperado), "Error en cálculo de rentabilidad"
+    print("✅ Test de rentabilidad pasado correctamente.")
